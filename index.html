@@ -1,0 +1,1069 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RideX | Luxury Car Rental</title>
+
+<style>
+:root {
+  --blue: #168cf5;
+  --navy: #171d40;
+  --gray: #69758b;
+  --bg: #f0f4fa;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--navy);
+}
+
+button, input, select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* HEADER */
+
+header {
+  max-width: 1400px;
+  margin: auto;
+  padding: 25px 35px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: bold;
+  letter-spacing: -2px;
+}
+
+.logo span {
+  color: var(--blue);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+nav a {
+  font-size: 14px;
+  color: #495570;
+}
+
+nav a:hover {
+  color: var(--blue);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.phone {
+  text-align: center;
+}
+
+.phone strong {
+  display: block;
+  font-size: 18px;
+}
+
+.phone small {
+  color: var(--gray);
+  font-size: 10px;
+}
+
+.btn {
+  background: var(--blue);
+  color: white;
+  padding: 15px 26px;
+  border: 0;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background: #006ccd;
+}
+
+.user-btn {
+  background: white;
+  border: 0;
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 21px;
+  box-shadow: 0 5px 15px #dce3eb;
+}
+
+/* HERO */
+
+.hero {
+  max-width: 1400px;
+  min-height: 690px;
+  margin: 15px auto 0;
+  padding: 25px 35px;
+  display: grid;
+  grid-template-columns: 53% 47%;
+  align-items: center;
+  position: relative;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.tag {
+  color: var(--blue);
+  letter-spacing: 5px;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.hero h1 {
+  font-size: clamp(38px, 4.2vw, 65px);
+  line-height: 1.17;
+  font-weight: 500;
+  margin-bottom: 25px;
+  max-width: 730px;
+}
+
+.hero-description {
+  color: var(--gray);
+  font-size: 17px;
+  margin-bottom: 48px;
+}
+
+.hero-image {
+  height: 650px;
+  width: 100%;
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* SEARCH BAR */
+
+.search-box {
+  display: flex;
+  background: white;
+  padding: 15px;
+  border-radius: 17px;
+  box-shadow: 0 15px 35px #cbd4e480;
+  width: min(850px, 92vw);
+  position: relative;
+  z-index: 5;
+  align-items: stretch;
+}
+
+.search-field {
+  flex: 1;
+  min-width: 0;
+  padding: 8px 17px;
+  border-right: 1px solid #e2e7f0;
+}
+
+.search-field label {
+  display: block;
+  color: var(--gray);
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.search-field input,
+.search-field select {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #263653;
+  font-size: 13px;
+}
+
+.search-box .btn {
+  min-width: 130px;
+}
+
+/* CAR SECTION */
+
+.section {
+  max-width: 1400px;
+  margin: 75px auto;
+  padding: 0 35px;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.section-heading h2 {
+  font-size: 38px;
+  margin-bottom: 14px;
+}
+
+.section-heading p {
+  color: var(--gray);
+}
+
+.cars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.car-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 7px 25px #dce3ef70;
+}
+
+.car-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  display: block;
+}
+
+.car-details {
+  padding: 25px;
+}
+
+.car-details h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.car-info {
+  color: var(--gray);
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.car-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.price {
+  font-size: 21px;
+  font-weight: bold;
+}
+
+.price small {
+  font-size: 11px;
+  color: var(--gray);
+  font-weight: normal;
+}
+
+.car-bottom .btn {
+  padding: 13px 18px;
+  font-size: 12px;
+}
+
+.no-results {
+  display: none;
+  text-align: center;
+  color: var(--gray);
+  padding: 30px;
+}
+
+/* ABOUT */
+
+.about {
+  background: white;
+  padding: 75px 35px;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+
+.about p {
+  max-width: 700px;
+  margin: auto;
+  color: var(--gray);
+  line-height: 1.8;
+}
+
+/* FOOTER */
+
+footer {
+  padding: 40px 25px;
+  text-align: center;
+  color: var(--gray);
+  font-size: 13px;
+}
+
+/* LOGIN AND BOOKING MODALS */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(12, 19, 40, 0.65);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 20px;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal-box {
+  width: 100%;
+  max-width: 430px;
+  background: white;
+  border-radius: 20px;
+  padding: 35px;
+  position: relative;
+}
+
+.modal-box h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.modal-box > p {
+  color: var(--gray);
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 14px;
+}
+
+.modal-box label {
+  display: block;
+  margin: 15px 0 8px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.modal-box input {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #d7dfeb;
+  border-radius: 9px;
+  outline-color: var(--blue);
+}
+
+.modal-box .btn {
+  width: 100%;
+  margin-top: 25px;
+}
+
+.close {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  border: 0;
+  background: none;
+  font-size: 28px;
+  color: var(--gray);
+}
+
+.forgot {
+  display: block;
+  margin-top: 15px;
+  text-align: right;
+  font-size: 13px;
+  color: var(--blue);
+}
+
+.booking-total {
+  margin-top: 20px;
+  font-weight: bold;
+  color: var(--navy);
+}
+
+/* MOBILE */
+
+@media (max-width: 1000px) {
+  header {
+    flex-wrap: wrap;
+  }
+
+  nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    min-height: auto;
+  }
+
+  .hero-image {
+    height: 420px;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+
+  .cars-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  header {
+    padding: 20px;
+  }
+
+  .phone {
+    display: none;
+  }
+
+  .hero {
+    padding: 25px 20px;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+  }
+
+  .hero-image {
+    height: 340px;
+  }
+
+  .search-box {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .search-field {
+    border-right: none;
+    border-bottom: 1px solid #e2e7f0;
+    padding: 12px;
+  }
+
+  .cars-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 0 20px;
+  }
+
+  .section-heading h2 {
+    font-size: 30px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header id="home">
+
+  <a href="#home" class="logo">Ride<span>X</span></a>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#cars">Explore Cars</a>
+    <a href="#about">About Us</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="header-right">
+
+    <div class="phone">
+      <strong>9200 21111</strong>
+      <small>Demo Contact Number</small>
+    </div>
+
+    <a href="#cars" class="btn">Explore Cars</a>
+
+    <button class="user-btn"
+            onclick="openModal('loginModal')"
+            aria-label="Login">
+      &#9786;
+    </button>
+
+  </div>
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <p class="tag">PREMIUM CAR RENTAL</p>
+
+    <h1>
+      THE EASY WAY TO<br>
+      RENT A LUXURY CAR
+    </h1>
+
+    <p class="hero-description">
+      Drive premium vehicles across
+      Riyadh, Jeddah and Dammam.
+    </p>
+
+    <form class="search-box" id="searchForm">
+
+      <div class="search-field">
+        <label for="brand">Car model or brand</label>
+        <select id="brand">
+          <option value="">All Cars</option>
+          <option value="bmw">BMW</option>
+          <option value="mercedes">Mercedes</option>
+          <option value="audi">Audi</option>
+        </select>
+      </div>
+
+      <div class="search-field">
+        <label for="budget">Max daily budget (SAR)</label>
+        <input type="number"
+               id="budget"
+               min="1"
+               placeholder="Enter budget">
+      </div>
+
+      <div class="search-field">
+        <label for="year">Minimum model year</label>
+        <select id="year">
+          <option value="">Any Year</option>
+          <option value="2022">2022</option>
+          <option value="2023">2023</option>
+          <option value="2024">2024</option>
+          <option value="2025">2025</option>
+          <option value="2026">2026</option>
+        </select>
+      </div>
+
+      <button class="btn" type="submit">SEARCH</button>
+
+    </form>
+
+  </div>
+
+  <div class="hero-image">
+
+    <!-- CHANGE THE MAIN BMW IMAGE HERE -->
+
+    <img
+      src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=1200&auto=format&fit=crop&q=85"
+      alt="Luxury BMW">
+
+  </div>
+
+</section>
+
+
+<!-- AVAILABLE CARS -->
+
+<section class="section" id="cars">
+
+  <div class="section-heading">
+    <h2>Explore Our Luxury Cars</h2>
+    <p>Choose your favorite car and enjoy the ride.</p>
+  </div>
+
+  <div class="cars-grid" id="carsGrid">
+
+    <!-- CAR 1 -->
+
+    <div class="car-card"
+         data-brand="bmw"
+         data-price="650"
+         data-year="2025">
+
+      <!-- CHANGE BMW IMAGE HERE -->
+
+      <img
+        src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=900&auto=format&fit=crop&q=85"
+        alt="BMW">
+
+      <div class="car-details">
+
+        <h3>BMW 5 Series</h3>
+
+        <p class="car-info">
+          2025 | Automatic | 5 Seats
+        </p>
+
+        <div class="car-bottom">
+
+          <div class="price">
+            650 SAR
+            <small>/ day</small>
+          </div>
+
+          <button class="btn"
+                  onclick="bookCar('BMW 5 Series',650)">
+            Book Now
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- CAR 2 -->
+
+    <div class="car-card"
+         data-brand="mercedes"
+         data-price="800"
+         data-year="2024">
+
+      <!-- CHANGE MERCEDES IMAGE HERE -->
+
+      <img
+        src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=900&auto=format&fit=crop&q=85"
+        alt="Mercedes">
+
+      <div class="car-details">
+
+        <h3>Mercedes-Benz E-Class</h3>
+
+        <p class="car-info">
+          2024 | Automatic | 5 Seats
+        </p>
+
+        <div class="car-bottom">
+
+          <div class="price">
+            800 SAR
+            <small>/ day</small>
+          </div>
+
+          <button class="btn"
+                  onclick="bookCar('Mercedes-Benz E-Class',800)">
+            Book Now
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- CAR 3 -->
+
+    <div class="car-card"
+         data-brand="audi"
+         data-price="550"
+         data-year="2023">
+
+      <!-- CHANGE AUDI IMAGE HERE -->
+
+      <img
+        src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=900&auto=format&fit=crop&q=85"
+        alt="Audi">
+
+      <div class="car-details">
+
+        <h3>Audi A6</h3>
+
+        <p class="car-info">
+          2023 | Automatic | 5 Seats
+        </p>
+
+        <div class="car-bottom">
+
+          <div class="price">
+            550 SAR
+            <small>/ day</small>
+          </div>
+
+          <button class="btn"
+                  onclick="bookCar('Audi A6',550)">
+            Book Now
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <p class="no-results" id="noResults">
+    No cars match your search.
+  </p>
+
+</section>
+
+
+<!-- ABOUT US -->
+
+<section class="about" id="about">
+
+  <h2>Why Choose RideX?</h2>
+
+  <p>
+    RideX offers a premium car rental experience
+    with luxury vehicles, competitive prices,
+    and a simple booking process.
+    Explore our collection and find the
+    perfect vehicle for your next journey.
+  </p>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer id="contact">
+
+  <p>
+    RideX - Luxury Car Rental
+  </p>
+
+  <p style="margin-top:10px">
+    Student Project | Saudi Arabia | 2026
+  </p>
+
+</footer>
+
+
+<!-- LOGIN POPUP -->
+
+<div class="modal" id="loginModal">
+
+  <div class="modal-box">
+
+    <button class="close"
+            onclick="closeModal('loginModal')">
+      &times;
+    </button>
+
+    <h2>Welcome Back</h2>
+
+    <p>Login to your RideX account</p>
+
+    <form id="loginForm">
+
+      <label for="email">Email Address</label>
+
+      <input
+        type="email"
+        id="email"
+        placeholder="Enter your email"
+        autocomplete="email"
+        required>
+
+      <label for="password">Password</label>
+
+      <input
+        type="password"
+        id="password"
+        placeholder="Enter your password"
+        autocomplete="current-password"
+        required>
+
+      <a href="#"
+         class="forgot"
+         onclick="forgotPassword(event)">
+        Forgot Password?
+      </a>
+
+      <button class="btn" type="submit">
+        Login
+      </button>
+
+    </form>
+
+  </div>
+</div>
+
+
+<!-- BOOKING POPUP -->
+
+<div class="modal" id="bookingModal">
+
+  <div class="modal-box">
+
+    <button class="close"
+            onclick="closeModal('bookingModal')">
+      &times;
+    </button>
+
+    <h2>Book Your Car</h2>
+
+    <p id="selectedCar">Selected Car</p>
+
+    <form id="bookingForm">
+
+      <label for="pickup">Pick-up Date</label>
+
+      <input type="date"
+             id="pickup"
+             required>
+
+      <label for="returnDate">Return Date</label>
+
+      <input type="date"
+             id="returnDate"
+             required>
+
+      <div class="booking-total" id="bookingTotal">
+        Select your rental dates
+      </div>
+
+      <button class="btn" type="submit">
+        Confirm Booking
+      </button>
+
+    </form>
+
+  </div>
+</div>
+
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+// OPEN POPUP
+
+function openModal(id) {
+  document.getElementById(id).classList.add("active");
+}
+
+// CLOSE POPUP
+
+function closeModal(id) {
+  document.getElementById(id).classList.remove("active");
+}
+
+// CLOSE POPUP BY CLICKING OUTSIDE
+
+document.querySelectorAll(".modal").forEach(modal => {
+  modal.addEventListener("click", function(event) {
+    if (event.target === modal) {
+      modal.classList.remove("active");
+    }
+  });
+});
+
+// CLOSE POPUP WITH ESCAPE
+
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Escape") {
+    document.querySelectorAll(".modal").forEach(modal => {
+      modal.classList.remove("active");
+    });
+  }
+});
+
+// LOGIN DEMO
+
+document.getElementById("loginForm")
+  .addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    alert(
+      "Login interface is ready! " +
+      "Java and MySQL authentication will be added later."
+    );
+
+  });
+
+// FORGOT PASSWORD
+
+function forgotPassword(event) {
+  event.preventDefault();
+
+  alert(
+    "Password recovery will be available " +
+    "after connecting the backend."
+  );
+}
+
+// SEARCH CARS
+
+document.getElementById("searchForm")
+  .addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const brand = document.getElementById("brand").value;
+    const budget = document.getElementById("budget").value;
+    const year = document.getElementById("year").value;
+
+    let count = 0;
+
+    document.querySelectorAll(".car-card")
+      .forEach(card => {
+
+        const carBrand = card.dataset.brand;
+        const carPrice = Number(card.dataset.price);
+        const carYear = Number(card.dataset.year);
+
+        const brandMatch =
+          !brand || carBrand === brand;
+
+        const budgetMatch =
+          !budget || carPrice <= Number(budget);
+
+        const yearMatch =
+          !year || carYear >= Number(year);
+
+        const matches =
+          brandMatch && budgetMatch && yearMatch;
+
+        card.style.display = matches ? "block" : "none";
+
+        if (matches) count++;
+
+      });
+
+    document.getElementById("noResults")
+      .style.display = count === 0 ? "block" : "none";
+
+    document.getElementById("cars")
+      .scrollIntoView({ behavior: "smooth" });
+
+  });
+
+// BOOKING
+
+let selectedPrice = 0;
+
+function bookCar(name, price) {
+
+  selectedPrice = price;
+
+  document.getElementById("selectedCar")
+    .textContent = name + " - " + price + " SAR/day";
+
+  document.getElementById("bookingForm").reset();
+
+  document.getElementById("bookingTotal")
+    .textContent = "Select your rental dates";
+
+  openModal("bookingModal");
+
+}
+
+// CALCULATE RENTAL DAYS
+
+function calculateBooking() {
+
+  const pickup = document.getElementById("pickup").value;
+  const returnDate =
+    document.getElementById("returnDate").value;
+
+  if (!pickup || !returnDate) {
+    return null;
+  }
+
+  const start = new Date(pickup + "T00:00:00");
+  const end = new Date(returnDate + "T00:00:00");
+
+  const days =
+    Math.round((end - start) / 86400000);
+
+  if (days <= 0) {
+    document.getElementById("bookingTotal")
+      .textContent = "Return date must be after pick-up date";
+    return null;
+  }
+
+  const total = days * selectedPrice;
+
+  document.getElementById("bookingTotal")
+    .textContent =
+      days + " days | Total: " + total + " SAR";
+
+  return total;
+
+}
+
+document.getElementById("pickup")
+  .addEventListener("change", calculateBooking);
+
+document.getElementById("returnDate")
+  .addEventListener("change", calculateBooking);
+
+// CONFIRM BOOKING DEMO
+
+document.getElementById("bookingForm")
+  .addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const total = calculateBooking();
+
+    if (total === null) {
+      alert("Please choose valid rental dates.");
+      return;
+    }
+
+    alert(
+      "Demo booking calculated: " + total +
+      " SAR. Booking is not saved yet."
+    );
+
+    closeModal("bookingModal");
+
+  });
+
+// MINIMUM PICKUP DATE
+
+const today = new Date();
+const localToday =
+  today.getFullYear() + "-" +
+  String(today.getMonth() + 1).padStart(2, "0") + "-" +
+  String(today.getDate()).padStart(2, "0");
+
+document.getElementById("pickup").min = localToday;
+document.getElementById("returnDate").min = localToday;
+
+</script>
+
+</body>
+</html>
